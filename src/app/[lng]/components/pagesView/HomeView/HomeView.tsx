@@ -70,7 +70,7 @@ function HomeView({ title }: IHomeView) {
         <Suspense fallback={<Preloader />}>
           {showCanvas ? (
             <Canvas
-              scene={{ scale: [0.9, 0.9, 0.9], position: [8.3, -2.1, 0], rotation: [0, 0, 0] }}
+              scene={{ scale: [0.9, 0.9, 0.9], position: [8, -2.13, 0], rotation: [0, 0, 0] }}
               camera={{
                 fov: CAMERA_DATA.FOV,
                 position: new Vector3(getCameraParams().X, getCameraParams().Y, getCameraParams().Z),

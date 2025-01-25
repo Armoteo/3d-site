@@ -33,5 +33,10 @@ export const CAMERA_DATA_ROTATION = {
   Y: 0,
   Z: 0,
 } as const;
-export const MODEL_PATH = '/models/Room_v1_1.glb';
-export const BUBBLE_PATH = '/img_Bubble.webp';
+export const MODEL_PATH = '/models/Room_v1_0.glb';
+export const BUBBLE_PATH = '/img_Bubble.png';
+export const TEXT_PATH = '/img_Text.png';
+export const TEXT2_PATH = '/img_Text2.png';
+export const BUBBLE_SYM_PATH = '/img_BubbleSymbol.png';
+export const TEXTURE_TOOLTIP_PATH = '/img_Tooltipv2.png';
+export const TEXTURE_TOOLTIP2_PATH = '/img_Tooltip2v2.png';
