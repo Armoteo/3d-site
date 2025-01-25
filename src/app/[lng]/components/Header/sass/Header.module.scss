@@ -1,0 +1,29 @@
+@import '../../../sass/variables.scss';
+@import '../../../sass/functions.module.scss';
+
+.container {
+  width: 100%;
+  padding: toRem(24) toRem(40);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 20;
+}
+
+.buttonsWrapper {
+  width: 100%;
+  max-width: toRem(219);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.image{
+  cursor: pointer;
+  @media only screen and (max-width: $screen-lg) {
+    cursor: none;
+  }
+}

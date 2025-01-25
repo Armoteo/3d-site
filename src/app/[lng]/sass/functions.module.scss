@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+@function px-to-rem($px) {
+  @return #{math.div($px, 16)}rem;
+}
+
+@function rem-to-px($rem) {
+  @return #{$rem * 16}px;
+}
+
+//convert px to rem
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+//convert line-height in px to number
+@function getLineHeight($lineHeight, $fontSize) {
+  $numberValue: $lineHeight / $fontSize;
+  @return $numberValue;
+}

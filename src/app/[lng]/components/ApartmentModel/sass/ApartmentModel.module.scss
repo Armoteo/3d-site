@@ -1,0 +1,24 @@
+@import '../../../sass/functions.module.scss';
+
+.tooltip {
+  color: white;
+  padding: toRem(12) toRem(8);
+  font-size: toRem(14);
+  font-weight: 500;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  border: toRem(2) solid var(--color-light-blue);
+  background: var(--color-light-blue-bg);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.firstTooltipClass {
+  border-radius: toRem(8) toRem(8) toRem(8) 0;
+  width: toRem(209);
+}
+
+.secondTooltipClass {
+  border-radius: toRem(8) toRem(8) 0 toRem(8);
+  width: toRem(244);
+}

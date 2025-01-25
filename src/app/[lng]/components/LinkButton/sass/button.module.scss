@@ -1,0 +1,88 @@
+@import "../../../sass/variables.scss";
+@import '../../../sass/functions.module.scss';
+
+.container {
+  font-weight: 600;
+  font-size: toRem(14);
+  line-height: getLineHeight(24, 18);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: var(--color-white);
+  color: var(--color-blue);
+  padding: toRem(13) toRem(18);
+  border-radius: toRem(10);
+  max-width: toRem(84);
+  cursor: pointer;
+
+  @media only screen and (max-width: $screen-lg) {
+    cursor: default;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--color-blue);
+    border-radius: toRem(10);
+    transition: height 0.3s ease-in-out;
+    z-index: 0;
+  }
+
+  &:hover::after {
+    height: 100%;
+  }
+
+  &:hover {
+    color: var(--color-white);
+  }
+
+  .textContainer {
+    display: inline-flex;
+    position: relative;
+    z-index: 1;
+
+    span {
+      display: inline-block;
+      position: relative;
+      transform: translateY(0);
+      transition: transform 0.4s ease;
+    }
+  }
+
+  &:hover .textContainer span {
+    animation: wave 0.5s ease-in-out forwards;
+  }
+
+  .textContainer span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .textContainer span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .textContainer span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .textContainer span:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .textContainer span:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .textContainer span:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+}

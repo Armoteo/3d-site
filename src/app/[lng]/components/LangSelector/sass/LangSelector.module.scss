@@ -1,0 +1,79 @@
+@import '../../../sass/functions.module.scss';
+@import '../../../sass/variables.scss';
+
+.container {
+  width: 100%;
+  height: toRem(44);
+  max-width: toRem(60);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+
+.selectedItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.item {
+  width: auto;
+  gap: toRem(6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: toRem(6);
+
+  .imageWrapper {
+    position: relative;
+    width: toRem(24);
+    height: toRem(24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--color-gray);
+    
+  }
+
+  .langText {
+    font-size: toRem(14);
+    font-weight: 500;
+    color: var(--color-white);
+    text-transform: capitalize;
+  }
+}
+
+.list {
+  position: absolute;
+  top: toRem(44);
+  right: 0;
+  width: toRem(65);
+  background: var(--color-gray);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: toRem(6);
+  padding: toRem(0) toRem(0);
+  z-index: 10;
+
+  .itemOption {
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 toRem(6);
+
+    &:hover {
+      background: var(--color-blue);
+    }
+  }
+}
