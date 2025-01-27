@@ -38,5 +38,5 @@ export const BUBBLE_PATH = '/img_Bubble.png';
 export const TEXT_PATH = '/img_Text.png';
 export const TEXT2_PATH = '/img_Text2.png';
 export const BUBBLE_SYM_PATH = '/img_BubbleSymbol.png';
-export const TEXTURE_TOOLTIP_PATH = '/img_Tooltipv2.png';
-export const TEXTURE_TOOLTIP2_PATH = '/img_Tooltip2v2.png';
+export const TEXTURE_TOOLTIP_PATH = '/img_BG1.png';
+export const TEXTURE_TOOLTIP2_PATH = '/img_BG2.png';

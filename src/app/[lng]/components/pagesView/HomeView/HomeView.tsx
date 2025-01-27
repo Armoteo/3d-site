@@ -17,9 +17,8 @@ import type IHomeView from './interfaces/IHomeView';
 import styles from './sass/HomeView.module.scss';
 
 import {
-  AMBIENT_INTENSITY,
   CAMERA_DATA, CAMERA_DATA_MOBILE, CAMERA_DATA_ROTATION,
-  CAMERA_DATA_TABLET, DIRECTIONAL_LIGHT_INTENSITY, DIRECTIONAL_LIGHT_POSITION,
+  CAMERA_DATA_TABLET,
 } from '@/constants/constants';
 import { useAppSelector } from '@/store/hooks/storeHook';
 
@@ -82,11 +81,6 @@ function HomeView({ title }: IHomeView) {
               style={{ height: '100%', width: '100vw' }}
               ref={canvasRef}
             >
-              <ambientLight intensity={AMBIENT_INTENSITY} />
-              <directionalLight
-                intensity={DIRECTIONAL_LIGHT_INTENSITY}
-                position={DIRECTIONAL_LIGHT_POSITION}
-              />
               <group position={[scenePosition, 0, 0]}>
                 <ApartmentModel
                   tablet={isMDDevice || isSMDevice}
