@@ -63,7 +63,7 @@ function HomeView({ title }: IHomeView) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowCanvas(true);
-    }, 2000);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
