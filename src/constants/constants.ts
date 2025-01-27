@@ -24,7 +24,7 @@ export const CAMERA_DATA_TABLET = {
 } as const;
 export const CAMERA_DATA_MOBILE = {
   FOV: 50,
-  X: -2,
+  X: -2.5,
   Y: 0,
   Z: 7,
 } as const;

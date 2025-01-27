@@ -46,14 +46,16 @@ function HomeView({ title }: IHomeView) {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    if (!(isMDDevice || isSMDevice || isXSDevice)) {
+      const handleScroll = () => {
+        setScroll(window.scrollY);
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, [isMDDevice, isSMDevice, isXSDevice]);
 
   const scenePosition = scroll * 0.05;
 
