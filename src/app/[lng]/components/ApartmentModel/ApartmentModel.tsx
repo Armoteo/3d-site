@@ -126,7 +126,7 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
               scale={[2.7, 1.1, 0]}
             >
               <planeGeometry args={[1, 1]} />
-              <meshBasicMaterial map={texture2} transparent color="#4fa7c6" />
+              <meshBasicMaterial map={texture2} transparent color="#4693af" />
             </mesh>
             <mesh
               position={[-1.1, 1.60, -2.5]}
@@ -172,7 +172,7 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
               scale={[3.8, 1.55, 0]}
             >
               <planeGeometry args={[1, 1]} />
-              <meshBasicMaterial map={texture3} transparent color="#4fa7c6" />
+              <meshBasicMaterial map={texture3} transparent color="#4693af" />
             </mesh>
             <mesh
               position={[1.4, 2.95, -4]}
