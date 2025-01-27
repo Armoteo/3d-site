@@ -59,7 +59,6 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
-
     if (imageRef.current) {
       imageRef.current.position.y = 1.0 + Math.sin(time) * 0.03;
       imageRef.current.rotation.z = MathUtils.lerp(
