@@ -55,6 +55,7 @@ function HomeView({ title }: IHomeView) {
         window.removeEventListener('scroll', handleScroll);
       };
     }
+    return undefined;
   }, [isMDDevice, isSMDevice, isXSDevice]);
 
   const scenePosition = scroll * 0.05;
