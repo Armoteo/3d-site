@@ -50,11 +50,15 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
   };
 
   const onHandleClickBubble1 = () => {
-    setOpenTooltip(!openTooltip);
+    if (tablet || mobile) {
+      setOpenTooltip(!openTooltip);
+    }
   };
 
   const onHandleClickBubble2 = () => {
-    setOpenTooltip2(!openTooltip2);
+    if (tablet || mobile) {
+      setOpenTooltip2(!openTooltip2);
+    }
   };
 
   useFrame(({ clock }) => {
@@ -103,7 +107,7 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
             }}
             onPointerOver={() => {
               setTargetRotation1(-Math.PI / 7.2);
-              onHandleClickBubble1();
+              setOpenTooltip(true);
             }}
           >
             <planeGeometry args={[1, 1]} />
@@ -149,7 +153,7 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
             }}
             onPointerOver={() => {
               setTargetRotation2(-Math.PI / 7.2);
-              onHandleClickBubble2();
+              setOpenTooltip2(true);
             }}
           >
             <planeGeometry args={[1, 1]} />
