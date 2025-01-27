@@ -61,7 +61,7 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
     const time = clock.getElapsedTime();
 
     if (imageRef.current) {
-      imageRef.current.position.y = 1.1 + Math.sin(time) * 0.06;
+      imageRef.current.position.y = 1.0 + Math.sin(time) * 0.03;
       imageRef.current.rotation.z = MathUtils.lerp(
         imageRef.current.rotation.z,
         targetRotation1,
@@ -69,10 +69,10 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
       );
     }
     if (imageSymRef.current) {
-      imageSymRef.current.position.y = 1.1 + Math.sin(time) * 0.06;
+      imageSymRef.current.position.y = 1.0 + Math.sin(time) * 0.03;
     }
     if (imageRef2.current) {
-      imageRef2.current.position.y = 2.2 + Math.cos(time) * 0.06;
+      imageRef2.current.position.y = 2.1 + Math.cos(time) * 0.03;
       imageRef2.current.rotation.z = MathUtils.lerp(
         imageRef2.current.rotation.z,
         targetRotation2,
@@ -80,7 +80,7 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
       );
     }
     if (imageSymRef2.current) {
-      imageSymRef2.current.position.y = 2.2 + Math.cos(time) * 0.06;
+      imageSymRef2.current.position.y = 2.1 + Math.cos(time) * 0.03;
     }
   });
 
@@ -95,22 +95,25 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
         <group>
           <mesh
             ref={imageRef}
-            position={[-1.7, 1.1, -2.5]}
-            scale={[0.7, 0.7, 0.7]}
+            position={[-1.9, 1.0, -2.5]}
+            scale={[0.55, 0.55, 0.55]}
             onClick={onHandleClickBubble1}
             onPointerOut={() => {
               setOpenTooltip(false);
               setTargetRotation1(0);
             }}
-            onPointerOver={() => setTargetRotation1(-Math.PI / 7.2)}
+            onPointerOver={() => {
+              setTargetRotation1(-Math.PI / 7.2);
+              onHandleClickBubble1();
+            }}
           >
             <planeGeometry args={[1, 1]} />
             <meshBasicMaterial map={texture} transparent />
           </mesh>
           <mesh
             ref={imageSymRef}
-            position={[-1.7, 1.1, -2.5]}
-            scale={[0.2, 0.3, 0]}
+            position={[-1.9, 1.0, -2.5]}
+            scale={[0.18, 0.28, 0]}
             onClick={onHandleClickBubble1}
           >
             <planeGeometry args={[1, 1]} />
@@ -120,40 +123,43 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
         {openTooltip ? (
           <group>
             <mesh
-              position={[-1.1, 1.75, -2.5]}
-              scale={[2.3, 1.2, 0]}
+              position={[-1.1, 1.50, -2.5]}
+              scale={[2.7, 1.1, 0]}
             >
               <planeGeometry args={[1, 1]} />
-              <meshBasicMaterial map={texture2} transparent color="#ABC1FB" />
+              <meshBasicMaterial map={texture2} transparent />
             </mesh>
             <mesh
-              position={[-1.1, 1.85, -2.5]}
-              scale={[1.65, 0.3, 0]}
+              position={[-1.1, 1.60, -2.5]}
+              scale={[2.0, 0.30, 0]}
             >
               <planeGeometry args={[1, 1]} />
-              <meshBasicMaterial map={text} transparent />
+              <meshBasicMaterial map={text} transparent color="#ffffff" />
             </mesh>
           </group>
         ) : null}
         <group>
           <mesh
             ref={imageRef2}
-            position={[2.45, 2.2, -4]}
-            scale={[0.8, 0.8, 0.8]}
+            position={[2.5, 2.1, -4]}
+            scale={[0.65, 0.65, 0.65]}
             onClick={onHandleClickBubble2}
             onPointerOut={() => {
               setOpenTooltip2(false);
               setTargetRotation2(0);
             }}
-            onPointerOver={() => setTargetRotation2(-Math.PI / 7.2)}
+            onPointerOver={() => {
+              setTargetRotation2(-Math.PI / 7.2);
+              onHandleClickBubble2();
+            }}
           >
             <planeGeometry args={[1, 1]} />
             <meshBasicMaterial map={texture} transparent />
           </mesh>
           <mesh
             ref={imageSymRef2}
-            position={[2.45, 2.2, -4]}
-            scale={[0.25, 0.36, 0]}
+            position={[2.5, 2.1, -4]}
+            scale={[0.24, 0.35, 0]}
             onClick={onHandleClickBubble2}
           >
             <planeGeometry args={[1, 1]} />
@@ -163,18 +169,18 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
         {openTooltip2 ? (
           <group>
             <mesh
-              position={[1.6, 2.98, -4]}
-              scale={[2.8, 1.4, 0]}
+              position={[1.4, 2.85, -4]}
+              scale={[3.8, 1.55, 0]}
             >
               <planeGeometry args={[1, 1]} />
-              <meshBasicMaterial map={texture3} transparent color="#ABC1FB" />
+              <meshBasicMaterial map={texture3} transparent />
             </mesh>
             <mesh
-              position={[1.6, 3.08, -4]}
-              scale={[2.1, 0.55, 0]}
+              position={[1.4, 2.95, -4]}
+              scale={[2.9, 0.6, 0]}
             >
               <planeGeometry args={[1, 1]} />
-              <meshBasicMaterial map={text2} transparent />
+              <meshBasicMaterial map={text2} transparent color="#ffffff" />
             </mesh>
           </group>
         ) : null}
