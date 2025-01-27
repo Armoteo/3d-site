@@ -33,8 +33,8 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
   const imageRef2 = useRef<THREE.Mesh>(null);
   const imageSymRef = useRef<THREE.Mesh>(null);
   const imageSymRef2 = useRef<THREE.Mesh>(null);
-  const [openTooltip, setOpenTooltip] = useState<boolean>(true);
-  const [openTooltip2, setOpenTooltip2] = useState<boolean>(true);
+  const [openTooltip, setOpenTooltip] = useState<boolean>(false);
+  const [openTooltip2, setOpenTooltip2] = useState<boolean>(false);
   const [targetRotation1, setTargetRotation1] = useState(0);
   const [targetRotation2, setTargetRotation2] = useState(0);
 
@@ -126,7 +126,7 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
               scale={[2.7, 1.1, 0]}
             >
               <planeGeometry args={[1, 1]} />
-              <meshBasicMaterial map={texture2} transparent />
+              <meshBasicMaterial map={texture2} transparent color="#4fa7c6" />
             </mesh>
             <mesh
               position={[-1.1, 1.60, -2.5]}
@@ -172,7 +172,7 @@ function ApartmentModel({ tablet, mobile }:IApartmentModel) {
               scale={[3.8, 1.55, 0]}
             >
               <planeGeometry args={[1, 1]} />
-              <meshBasicMaterial map={texture3} transparent />
+              <meshBasicMaterial map={texture3} transparent color="#4fa7c6" />
             </mesh>
             <mesh
               position={[1.4, 2.95, -4]}
