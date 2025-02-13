@@ -33,7 +33,7 @@ export const CAMERA_DATA_ROTATION = {
   Y: 0,
   Z: 0,
 } as const;
-export const MODEL_PATH = '/models/Room_v1_2.glb';
+export const MODEL_PATH = '/models/Room_v1_0.glb';
 export const BUBBLE_PATH = '/img_Bubble.png';
 export const TEXT_PATH = '/img_Text.png';
 export const TEXT2_PATH = '/img_Text2.png';
