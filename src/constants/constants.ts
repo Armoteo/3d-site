@@ -11,20 +11,20 @@ export const DIRECTIONAL_LIGHT_POSITION = [-2, 2, 2] as const;
 export const DIRECTIONAL_LIGHT_INTENSITY = 1;
 export const AMBIENT_INTENSITY = 1;
 export const CAMERA_DATA = {
-  FOV: 51,
-  X: 0,
+  FOV: 56,
+  X: -0.5,
   Y: 0,
   Z: 5,
 } as const;
 export const CAMERA_DATA_TABLET = {
   FOV: 50,
-  X: -1.5,
+  X: -2.2,
   Y: 0,
   Z: 6,
 } as const;
 export const CAMERA_DATA_MOBILE = {
   FOV: 50,
-  X: -2.5,
+  X: -2.9,
   Y: 0,
   Z: 7,
 } as const;
