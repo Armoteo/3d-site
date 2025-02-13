@@ -33,16 +33,28 @@ function HomeView({ title }: IHomeView) {
   } = useAppSelector((state) => state?.app);
   const [scroll, setScroll] = useState(0);
   const [showCanvas, setShowCanvas] = useState(false);
+  const [cameraOption, setCameraOption] = useState({
+    FOV: 56,
+    X: -0.5,
+    Y: 0,
+    Z: 5,
+  });
+  const [canvasKey, setCanvasKey] = useState(0);
 
   const getCameraParams = () => {
-    let params: { [propName: string]: number } = CAMERA_DATA;
     if (isMDDevice || isSMDevice) {
-      params = CAMERA_DATA_TABLET;
+      setCameraOption(CAMERA_DATA_TABLET);
     } else if (isXSDevice) {
-      params = CAMERA_DATA_MOBILE;
+      setCameraOption(CAMERA_DATA_MOBILE);
+    } else {
+      setCameraOption(CAMERA_DATA);
     }
-    return params;
+    setCanvasKey((prevKey) => prevKey + 1);
   };
+
+  useEffect(() => {
+    getCameraParams();
+  }, [isMDDevice, isSMDevice, isXSDevice]);
 
   useEffect(() => {
     if (!(isMDDevice || isSMDevice || isXSDevice)) {
@@ -72,10 +84,11 @@ function HomeView({ title }: IHomeView) {
         <Suspense fallback={<Preloader />}>
           {showCanvas ? (
             <Canvas
+              key={canvasKey}
               scene={{ scale: [0.9, 0.9, 0.9], position: [8, -2.13, 0], rotation: [0, 0, 0] }}
               camera={{
                 fov: CAMERA_DATA.FOV,
-                position: new Vector3(getCameraParams().X, getCameraParams().Y, getCameraParams().Z),
+                position: new Vector3(cameraOption.X, cameraOption.Y, cameraOption.Z),
                 rotation: new Euler(CAMERA_DATA_ROTATION.X, CAMERA_DATA_ROTATION.Y, CAMERA_DATA_ROTATION.Z),
               }}
               style={{ height: '100%', width: '100vw' }}
