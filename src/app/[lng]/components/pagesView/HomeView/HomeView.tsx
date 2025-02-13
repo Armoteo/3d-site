@@ -42,6 +42,7 @@ function HomeView({ title }: IHomeView) {
   const [canvasKey, setCanvasKey] = useState(0);
 
   const getCameraParams = () => {
+    setShowCanvas(false);
     if (isMDDevice || isSMDevice) {
       setCameraOption(CAMERA_DATA_TABLET);
     } else if (isXSDevice) {
@@ -49,7 +50,8 @@ function HomeView({ title }: IHomeView) {
     } else {
       setCameraOption(CAMERA_DATA);
     }
-    setCanvasKey((prevKey) => prevKey + 1);
+
+    setCanvasKey((prev) => prev + 1);
   };
 
   useEffect(() => {
@@ -77,6 +79,17 @@ function HomeView({ title }: IHomeView) {
     }, 500);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (!showCanvas) {
+      const timer = setTimeout(() => {
+        setShowCanvas(true);
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [showCanvas]);
 
   return (
     <Layout title={title}>
