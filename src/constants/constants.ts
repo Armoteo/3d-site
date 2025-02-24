@@ -8,8 +8,8 @@ export const SM_DEVICE = 576;
 export const XS_DEVICE = 0;
 
 export const DIRECTIONAL_LIGHT_POSITION = [-2, 2, 2] as const;
-export const DIRECTIONAL_LIGHT_INTENSITY = 1;
-export const AMBIENT_INTENSITY = 1;
+export const DIRECTIONAL_LIGHT_INTENSITY = 0;
+export const AMBIENT_INTENSITY = 0;
 export const CAMERA_DATA = {
   FOV: 56,
   X: -0.5,
@@ -33,7 +33,7 @@ export const CAMERA_DATA_ROTATION = {
   Y: 0,
   Z: 0,
 } as const;
-export const MODEL_PATH = '/models/Room_v1_0.glb';
+export const MODEL_PATH = '/models/Room_v1_3.glb';
 export const BUBBLE_PATH = '/img_Bubble.png';
 export const TEXT_PATH = '/img_Text.png';
 export const TEXT2_PATH = '/img_Text2.png';
